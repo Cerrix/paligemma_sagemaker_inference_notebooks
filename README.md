@@ -107,7 +107,7 @@ predictor = huggingface_model.deploy(
 )
 ```
 
-8. **Test the deployed model**: The notebook demonstrates how to send a request to the deployed SageMaker endpoint for image segmentation. It encodes a test image as base64, includes a textual prompt, and sends it to the endpoint for inference. The response from the endpoint is then printed.
+8. **Test the deployed model**: The notebook demonstrates how to send a request to the deployed SageMaker endpoint for image detection. It encodes a test image as base64, includes a textual prompt, and sends it to the endpoint for inference. The response from the endpoint is then printed.
 
 ```python
 import base64
@@ -116,7 +116,7 @@ from PIL import Image
 # ... (code omitted for brevity)
 
 payload = {
-    "prompt": "segment person",
+    "prompt": "detect dog",
     "image": encoded_input_image
 }
 
