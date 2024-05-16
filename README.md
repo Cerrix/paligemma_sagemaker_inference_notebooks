@@ -125,6 +125,13 @@ query_response = predictor.predict(data=payload)
 
 By following this tutorial and referencing the provided code snippets, you will learn how to deploy the PaliGemma vision model on Amazon SageMaker and test it with a sample image segmentation task. Remember to replace placeholders like `YOUR_HF_TOKEN` with your actual Hugging Face access token.
 
+9. **Delete the deployed model**: running the last command you can delete the endpoint to avoid not desidered costs:
+
+```python
+# delete endpoint
+predictor.delete_endpoint()
+```
+
 
 ## General Disclaimer
 
