@@ -1,12 +1,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Deploying Google Paligemma on Amazon SageMaker
+# Deploying Google PaliGemma on Amazon SageMaker
 
-This tutorial will guide you through the process of deploying the Google Paligemma vision model on Amazon SageMaker as a real-time inference endpoint using a Jupyter Notebook.
+This tutorial will guide you through the process of deploying the Google PaliGemma vision model on Amazon SageMaker as a real-time inference endpoint using a Jupyter Notebook.
 
-## What is Paligemma?
+## What is PaliGemma?
 
-Paligemma is a large-scale vision-language model developed by Google. It can perform various tasks, including image segmentation, object detection, and image captioning, by combining vision and language representations.
+PaliGemma is a large-scale vision-language model developed by Google. It can perform various tasks, including image segmentation, object detection, and image captioning, by combining vision and language representations.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ sess = sagemaker.Session()
 # ... (code omitted for brevity)
 ```
 
-3. **Prepare the model directory**: The notebook creates a directory structure to store the Paligemma model files. It also writes the necessary code files (`inference.py` and `requirements.txt`) to this directory.
+3. **Prepare the model directory**: The notebook creates a directory structure to store the PaliGemma model files. It also writes the necessary code files (`inference.py` and `requirements.txt`) to this directory.
 
 ```python
 !mkdir code
@@ -52,14 +52,14 @@ Pillow
 # ... (inference script code omitted for brevity)
 ```
 
-4. **Download the model snapshot**: The notebook downloads the Paligemma model snapshot from the Hugging Face repository using your access token. This step requires you to accept the terms and conditions for the Paligemma model on the Hugging Face website.
+4. **Download the model snapshot**: The notebook downloads the PaliGemma model snapshot from the Hugging Face repository using your access token. This step requires you to accept the terms and conditions for the PaliGemma model on the Hugging Face website.
 
 ```python
 from distutils.dir_util import copy_tree
 from pathlib import Path
 from huggingface_hub import snapshot_download
 import random
-HF_MODEL_ID="google/paligemma-3b-mix-224"
+HF_MODEL_ID="google/PaliGemma-3b-mix-224"
 HF_TOKEN="YOUR_HF_TOKEN"
 
 # download snapshot
@@ -103,7 +103,7 @@ huggingface_model = HuggingFaceModel(
 predictor = huggingface_model.deploy(
     initial_instance_count=1,
     instance_type="ml.g4dn.xlarge",
-    endpoint_name=f"paligemma-{timestamp}"
+    endpoint_name=f"PaliGemma-{timestamp}"
 )
 ```
 
@@ -123,7 +123,7 @@ payload = {
 query_response = predictor.predict(data=payload)
 ```
 
-By following this tutorial and referencing the provided code snippets, you will learn how to deploy the Paligemma vision model on Amazon SageMaker and test it with a sample image segmentation task. Remember to replace placeholders like `YOUR_HF_TOKEN` with your actual Hugging Face access token.
+By following this tutorial and referencing the provided code snippets, you will learn how to deploy the PaliGemma vision model on Amazon SageMaker and test it with a sample image segmentation task. Remember to replace placeholders like `YOUR_HF_TOKEN` with your actual Hugging Face access token.
 
 
 ## General Disclaimer
