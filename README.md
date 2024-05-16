@@ -135,7 +135,7 @@ predictor.delete_endpoint()
 
 ## General Disclaimer
 
-This notebook is intended for demonstration and educational purposes only. It is not designed for production use without further modifications and hardening. Before deploying this enpoint to a production environment, it is crucial to conduct thorough testing, security assessments, and optimizations based on your specific requirements and best practices.
+This notebook is intended for demonstration and educational purposes only. It is not designed for production use without further modifications and hardening. Before deploying this endpoint to a production environment, it is crucial to conduct thorough testing, security assessments, and optimizations based on your specific requirements and best practices.
 
 ## Contributing
 
